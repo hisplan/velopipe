@@ -1,0 +1,7 @@
+{
+    "Velopipe.countMatrix": "gs://chunj-cromwell/velopipe/1302_Lib17_X2E_D7_A_P165_IGO_10051_1_dense.csv",
+    "Velopipe.bam": "gs://chunj-cromwell/velopipe/sampled.bam",
+    "Velopipe.bai": "gs://chunj-cromwell/velopipe/sampled.bam.bai",
+    "Velopipe.gtf": "gs://chunj-cromwell/velopipe/annotations.gtf",
+    "Velopipe.barcodeWhitelist": "gs://chunj-cromwell/velopipe/737K-august-2016.txt"
+}

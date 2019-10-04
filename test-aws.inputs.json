@@ -1,0 +1,7 @@
+{
+    "Velopipe.countMatrix": "s3://dp-lab-data/collaborators/hadjanta/ES_-_XEN_Invitro_differentation/data_and_notebooks/t1_a/1302_Lib17_X2E_D7_A_P165_IGO_10051_1_dense.csv",
+    "Velopipe.bam": "s3://dp-lab-home/chunj/velopipe/sampled.bam",
+    "Velopipe.bai": "s3://dp-lab-home/chunj/velopipe/sampled.bam.bai",
+    "Velopipe.gtf": "s3://seqc-public/genomes/mm38_long_polya/annotations.gtf",
+    "Velopipe.barcodeWhitelist": "s3://dp-lab-data/collaborators/hadjanta/ES_-_XEN_Invitro_differentation/data_and_notebooks/737K-august-2016.txt"
+}

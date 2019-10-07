@@ -19,6 +19,7 @@ task Velocyto {
             --bcfile ~{barcodeWhitelist} \
             --outputfolder outs \
             --samtools-threads ~{numCores} \
+            --samtools-memory 6144 \
             -vv \
             ~{bam} \
             ~{gtf}

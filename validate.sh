@@ -2,5 +2,5 @@
 
 java -jar ~/Applications/womtool.jar \
     validate \
-    Velocyto.wdl \
-    --inputs Velocyto.inputs.json
+    Velopipe.wdl \
+    --inputs Velopipe.inputs.json

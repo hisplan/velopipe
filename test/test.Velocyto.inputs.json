@@ -1,0 +1,5 @@
+{
+    "Velocyto.bam": "s3://dp-lab-batch/cromwell-execution/Velopipe/6febc66e-2741-4170-9c22-001e6358607c/call-SortIndexBam/1147_Lib16_D28_2_P160_IGO_09767_16_Aligned.out.sorted.tagged.sorted.bam",
+    "Velocyto.gtf": "s3://seqc-public/genomes/mm38_long_polya/annotations.gtf",
+    "Velocyto.barcodeWhitelist": "s3://dp-lab-data/collaborators/hadjanta/ES_-_XEN_Invitro_differentation/data_and_notebooks/737K-august-2016.txt"
+}

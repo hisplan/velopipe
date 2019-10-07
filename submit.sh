@@ -25,6 +25,6 @@ fi
 
 cromwell-tools submit \
     --secrets-file ${service_account_key} \
-    --wdl Velocyto.wdl \
-    --inputs-files Velocyto.inputs.json \
+    --wdl Velopipe.wdl \
+    --inputs-files Velopipe.inputs.json \
     --deps-file Velopipe.deps.zip    

@@ -25,5 +25,5 @@ fi
 
 cromwell-tools submit \
     --secrets-file ${service_account_key} \
-    --wdl Velocyto.wdl \
+    --wdl Velopipe.wdl \
     --inputs-files test-aws.inputs.json

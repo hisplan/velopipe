@@ -40,7 +40,7 @@ FILE
 # subtmit
 cromwell-tools submit \
     --secrets-file ${service_account_key} \
-    --wdl Velocyto.wdl \
+    --wdl Velopipe.wdl \
     --inputs-files ${config_json} \
     --deps-file Velopipe.deps.zip \
     --label-file ${path_label}

@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-modules="TagBam SortIndexBam Velocyto"
+modules="TagBam SortByBarcode SortIndexBam Velocyto"
 
 for module_name in $modules
 do

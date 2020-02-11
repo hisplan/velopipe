@@ -1,0 +1,8 @@
+{
+    "Velopipe.countMatrix": "s3://dp-lab-data/collaborators/hadjanta/ES_-_XEN_Invitro_differentation/data_and_notebooks/t0_startD/1773_Lib44_X2E_Start_D_IGO_10587_8_dense.csv",
+    "Velopipe.bam": "s3://dp-lab-data/collaborators/hadjanta/ES_-_XEN_Invitro_differentation/data_and_notebooks/t0_startD/1773_Lib44_X2E_Start_D_IGO_10587_8_Aligned.out.sorted.bam",
+    "Velopipe.bai": "s3://dp-lab-data/collaborators/hadjanta/ES_-_XEN_Invitro_differentation/data_and_notebooks/t0_startD/1773_Lib44_X2E_Start_D_IGO_10587_8_Aligned.out.sorted.bam.bai",
+    "Velopipe.gtf": "s3://seqc-public/genomes/mm38_long_polya/annotations.gtf",
+    "Velopipe.barcodeWhitelist": "s3://dp-lab-data/collaborators/hadjanta/ES_-_XEN_Invitro_differentation/data_and_notebooks/737K-august-2016.txt",
+    "Velopipe.alreadySortedBam": true
+}

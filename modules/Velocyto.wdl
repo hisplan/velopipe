@@ -34,7 +34,7 @@ task Velocyto {
     # 2GB per core is not enough and will fail.
     runtime {
         docker: dockerImage
-        disks: "local-disk " + ceil(2 * (if inputSize < 1 then 1 else inputSize )) + " HDD"
+        disks: "local-disk " + ceil(10 * (if inputSize < 1 then 5 else inputSize)) + " HDD"
         cpu: numCores
         memory: "32 GB"
         preemptible: 0

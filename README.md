@@ -44,7 +44,7 @@ You need to provide two JSON files that describes your job:
 }
 ```
 
-- `project`: project ID or name retrieved from SCRI database
+- `project`: project ID retrieved from SCRI database
 - `sample`: sample name
 - `destination`: AWS S3 location where the final output files (e.g. loom) should be saved
 
@@ -52,7 +52,7 @@ You need to provide two JSON files that describes your job:
 
 ```bash
 ./submit.sh \
-    -k ~/tent/keys/secrets-aws.json \
+    -k ~/secrets-aws.json \
     -i config/your-sample.inputs.json \
     -l config/your-sample.labels.json \
     -o Velopipe.options.aws.json

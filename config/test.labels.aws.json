@@ -1,0 +1,9 @@
+{
+    "pipelineType": "Velopipe",
+    "project": "Project 10051",
+    "sample": "Lib17_X2E_D7_A",
+    "owner": "chunj",
+    "destination": "s3://chunj-cromwell/outputs/Project_10051/Lib17_X2E_D7_A/Velopipe",
+    "transfer": "-",
+    "comment": "RNA Velocity"
+}

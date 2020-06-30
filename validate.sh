@@ -3,4 +3,4 @@
 java -jar ~/Applications/womtool.jar \
     validate \
     Velopipe.wdl \
-    --inputs Velopipe.inputs.json
+    --inputs ./config/test.inputs.aws.json

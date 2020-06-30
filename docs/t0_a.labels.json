@@ -1,0 +1,9 @@
+{
+    "pipelineType": "Velopipe",
+    "project": "Project 165",
+    "sample": "1138_Lib6_XEN_1",
+    "owner": "chunj",
+    "destination": "s3://dp-lab-batch/outputs/hadjanta/ES-XEN_Invitro_differentation/t0_a",
+    "transfer": "-",
+    "comment": "RNA Velocity"
+}

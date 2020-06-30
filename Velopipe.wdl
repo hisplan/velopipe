@@ -9,7 +9,7 @@ workflow Velopipe {
     input {
         File countMatrix
         File bam
-        File bai
+        File? bai
         File gtf
         File barcodeWhitelist
         Boolean alreadySortedBam

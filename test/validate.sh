@@ -3,7 +3,7 @@
 #hack: get dependency set up
 ln -s ../modules/ modules
 
-modules="TagBam SortByBarcode SortIndexBam Velocyto"
+modules="ExtractBarcodes TagBam SortByBarcode SortIndexBam Velocyto"
 
 for module_name in $modules
 do

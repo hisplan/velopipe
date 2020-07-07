@@ -1,0 +1,3 @@
+{
+    "ExtractBarcodes.countsMatrix": "s3://dp-lab-data/collaborators/wolchok/Adjuvant_vaccine/IL10R/seqc-results/1380_IL10R_P176_IGO_10084_4_dense.csv"
+}

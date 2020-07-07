@@ -8,14 +8,16 @@ task SortIndexBam {
 
     String dockerImage = "hisplan/cromwell-samtools:1.9"
     Float inputSize = size(inBam, "GiB")
-    Int numCores = 2
+    Int numCores = 8
 
     String outBam = basename(inBam, ".bam") + ".sorted.bam"
 
     command <<<
         set -euo pipefail
 
+        # sort by position
         samtools sort --threads ~{numCores} -o ~{outBam} ~{inBam}
+        # index
         samtools index ~{outBam}
     >>>
 
@@ -29,7 +31,7 @@ task SortIndexBam {
         docker: dockerImage
         # disks: "local-disk " + ceil(10 * (if inputSize < 5 then 1 else inputSize)) + " HDD"
         cpu: numCores
-        memory: "16 GB"
+        memory: "64 GB"
         preemptible: 0
     }
 }

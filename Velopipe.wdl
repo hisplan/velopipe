@@ -1,18 +1,25 @@
 version 1.0
 
+import "modules/ExtractBarcodes.wdl" as ExtractBarcodes
 import "modules/TagBam.wdl" as TagBam
 import "modules/SortIndexBam.wdl" as SortIndexBam
+import "modules/SortByBarcode.wdl" as SortByBarcode
 import "modules/Velocyto.wdl" as Velocyto
 
 workflow Velopipe {
 
     input {
-        File countMatrix
+        File countsMatrix
         File bam
         File? bai
         File gtf
         File barcodeWhitelist
         Boolean alreadySortedBam
+    }
+
+    call ExtractBarcodes.ExtractBarcodes {
+        input:
+            countsMatrix = countsMatrix
     }
 
     # sort and index if not already
@@ -29,27 +36,37 @@ workflow Velopipe {
 
     call TagBam.TagBam {
         input:
-            countMatrix = countMatrix,
+            whitelist = barcodeWhitelist,
             inBam = sortedBam,
             inBai = sortedBai,
             outBam = basename(sortedBam, ".bam") + ".tagged.bam"
     }
 
-    call SortIndexBam.SortIndexBam as SortIndexTaggedBam {
+    # if the file cellsorted_${ORIGINAL-BAM-NAME} exists,
+    # the sorting procedure will be skipped and the file present will be used.
+    call SortByBarcode.SortByBarcode as CBSortedTaggedBam {
+        input:
+            inBam = TagBam.outTaggedBam
+    }
+
+    call SortIndexBam.SortIndexBam as PosSortedTaggedBam {
         input:
             inBam = TagBam.outTaggedBam
     }
 
     call Velocyto.Velocyto {
         input:
-            bam = SortIndexTaggedBam.outSortedBam,
+            bamCBSorted = CBSortedTaggedBam.outSortedBam,
+            bamPosSorted = PosSortedTaggedBam.outSortedBam,
+            baiPosSorted = PosSortedTaggedBam.outSortedBai,
             gtf = gtf,
-            barcodeWhitelist = barcodeWhitelist
+            filteredBarcodeSet = ExtractBarcodes.outFilteredBarcodesACGT
     }
 
     output {
-        File outBam = SortIndexTaggedBam.outSortedBam
-        File outBai = SortIndexTaggedBam.outSortedBai
+        File outCBSortedTaggedBam = CBSortedTaggedBam.outSortedBam
+        File outPosSortedTaggedBam = PosSortedTaggedBam.outSortedBam
+        File outPosSortedTaggedBai = PosSortedTaggedBam.outSortedBai
         File outLoom = Velocyto.outLoom
     }
 }

@@ -5,16 +5,20 @@ import "modules/Velocyto.wdl" as Velocyto
 workflow Velocyto {
 
     input {
-        File bam
+        File bamCBSorted
+        File bamPosSorted
+        File baiPosSorted
         File gtf
-        File barcodeWhitelist
+        File filteredBarcodeSet
     }
 
     call Velocyto.Velocyto {
         input:
-            bam = bam,
+            bamCBSorted = bamCBSorted,
+            bamPosSorted = bamPosSorted,
+            baiPosSorted = baiPosSorted,
             gtf = gtf,
-            barcodeWhitelist = barcodeWhitelist
+            filteredBarcodeSet = filteredBarcodeSet
     }
 
 }

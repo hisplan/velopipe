@@ -5,14 +5,14 @@ import "modules/TagBam.wdl" as TagBam
 workflow TagBam {
 
     input {
-        File countMatrix
+        File whitelist
         File bam
         File bai
     }
 
     call TagBam.TagBam {
         input:
-            countMatrix = countMatrix,
+            whitelist = whitelist,
             inBam = bam,
             inBai = bai,
             outBam = basename(bam, ".bam") + ".tagged.bam"

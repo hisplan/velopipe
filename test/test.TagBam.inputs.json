@@ -1,5 +1,5 @@
 {
-    "TagBam.countMatrix": "s3://dp-lab-data/collaborators/hadjanta/ES_-_XEN_Invitro_differentation/data_and_notebooks/t2_a/1303_Lib18_X2E_D14_A_P165_IGO_10051_2_dense.csv",
+    "TagBam.whitelist": "s3://dp-lab-data/collaborators/hadjanta/ES_-_XEN_Invitro_differentation/data_and_notebooks/737K-august-2016.txt",
     "TagBam.bam": "s3://dp-lab-data/collaborators/hadjanta/ES_-_XEN_Invitro_differentation/data_and_notebooks/t2_a/1303_Lib18_X2E_D14_A_P165_IGO_10051_2_Aligned.out.sorted.bam",
     "TagBam.bai": "s3://dp-lab-data/collaborators/hadjanta/ES_-_XEN_Invitro_differentation/data_and_notebooks/t2_a/1303_Lib18_X2E_D14_A_P165_IGO_10051_2_Aligned.out.sorted.bam.bai"
 }

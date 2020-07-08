@@ -8,22 +8,30 @@ task SortByBarcode {
 
     String dockerImage = "hisplan/cromwell-samtools:1.9"
     Float inputSize = size(inBam, "GiB")
-    Int numCores = 4
+    Int numCores = 8
 
     String outBam = "cellsorted_" + basename(inBam)
 
     command <<<
         set -euo pipefail
 
-        # samtools sort --threads ~{numCores} -o ~{outBam} ~{inBam}
+        # only sort by CB (cellular barcode), no index
+        # because chromosome blocks not continuous
         samtools sort \
-            -l 7 \
-            -m 6G \
             --threads ~{numCores} \
             -t CB \
             -O BAM \
             -o ~{outBam} \
             ~{inBam}
+
+        # samtools sort \
+        #     -l 7 \
+        #     -m 6G \
+        #     --threads ~{numCores} \
+        #     -t CB \
+        #     -O BAM \
+        #     -o ~{outBam} \
+        #     ~{inBam}
     >>>
 
     output {
@@ -35,7 +43,7 @@ task SortByBarcode {
         docker: dockerImage
         # disks: "local-disk " + ceil(10 * (if inputSize < 1 then 5 else inputSize)) + " HDD"
         cpu: numCores
-        memory: "32 GB"
+        memory: "64 GB"
         preemptible: 0
     }
 }

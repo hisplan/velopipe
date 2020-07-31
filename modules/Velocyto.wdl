@@ -12,7 +12,14 @@ task Velocyto {
 
     String dockerImage = "hisplan/cromwell-velocyto:0.17.17"
     Float inputSize = size(bamCBSorted, "GiB") + size(bamPosSorted, "GiB") + size(baiPosSorted, "GiB") + size(gtf, "GiB") + size(filteredBarcodeSet, "GiB")
+
+    # the current version of velocyto is pretty much single-threaded
+    # (except samtools' sorting steps)
     Int numCores = 4
+
+    # filtered barcodes from dense matrix requires 32 GB
+    # filtered barcodes from sparse matrix requires more than 256 GB
+    Int memory = 32
 
     command <<<
         set -euo pipefail
@@ -45,7 +52,7 @@ task Velocyto {
         docker: dockerImage
         # disks: "local-disk " + ceil(10 * (if inputSize < 1 then 5 else inputSize)) + " HDD"
         cpu: numCores
-        memory: "32 GB"
+        memory: memory + " GB"
         preemptible: 0
     }
 }

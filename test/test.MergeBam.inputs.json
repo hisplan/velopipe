@@ -1,0 +1,25 @@
+{
+    "MergeBam.chunks": [
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0001.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0002.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0003.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0004.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0005.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0006.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0007.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0008.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0009.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0010.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0011.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0012.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0013.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0014.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0015.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0016.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0017.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0018.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0019.bam",
+        "s3://dp-lab-batch/cromwell-execution/SplitBam/455e3673-5978-40b0-93bd-0ba85d78b371/call-SplitBam/glob-c60c9bc7e1290d8540ead3c27c9602fc/shard_0020.bam"
+    ],
+    "MergeBam.fileName": "1379_ISO_P176_IGO_10084_3"
+}

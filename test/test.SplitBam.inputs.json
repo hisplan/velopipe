@@ -1,0 +1,4 @@
+{
+    "SplitBam.inBam": "s3://dp-lab-data/collaborators/wolchok/Adjuvant_vaccine/ISO/seqc-results/1379_ISO_P176_IGO_10084_3_Aligned.out.bam",
+    "SplitBam.numOfChunks": 20
+}

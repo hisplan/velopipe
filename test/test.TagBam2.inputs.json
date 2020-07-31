@@ -1,0 +1,8 @@
+{
+    "TagBam2.sampleName": "1379_ISO_P176_IGO_10084_3",
+    "TagBam2.inBam": "s3://dp-lab-data/collaborators/wolchok/Adjuvant_vaccine/ISO/seqc-results/1379_ISO_P176_IGO_10084_3_Aligned.out.bam",
+    "TagBam2.numOfChunks": 20,
+    "TagBam2.whitelist": "s3://seqc-public/barcodes/ten_x_v2/flat/737K-august-2016.txt",
+    "TagBam2.cbCorrection": "s3://dp-lab-test/seqc/datasets/RU682_NORMAL/RU682_NORMAL_DASK_cb-correction.csv.gz",
+    "TagBam2.umiCorrection": "s3://dp-lab-test/seqc/datasets/RU682_NORMAL/RU682_NORMAL_DASK_umi-correction.csv.gz"
+}

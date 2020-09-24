@@ -40,12 +40,13 @@ task Velocyto {
             --outputfolder outs \
             -vv \
             ~{bamPosSorted} \
-            ~{gtf}
+            ~{gtf} | tee velocyto.log
 
     >>>
 
     output {
         File outLoom = glob("./outs/*.loom")[0]
+        File outLog = "velocyto.log"
     }
 
     runtime {

@@ -76,5 +76,6 @@ workflow Velopipe2 {
         File outPosSortedTaggedBai = MergeBam.outBai
         File outLoom = Velocyto.outLoom
         File outTagBamLog = TagBam2.outLog
+        File outVelocytoLog = Velocyto.outLog
     }
 }

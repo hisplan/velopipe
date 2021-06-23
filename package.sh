@@ -3,7 +3,7 @@
 set -euo pipefail
 
 version="0.0.4"
-workflow_name="Velopipe2"
+workflow_name="Velopipe"
 
 #
 # package it and push it to AWS S3
@@ -25,7 +25,7 @@ echo "DONE."
 EOF
 
 tar cvzf ${path_workdir}/${workflow_name}-${version}.tar.gz \
-    submit.sh ${workflow_name}.wdl ${workflow_name}.deps.zip ${workflow_name}.options.aws.json
+    submit.sh ${workflow_name}2.wdl ${workflow_name}.deps.zip ${workflow_name}.options.aws.json
 
 aws s3 cp ${path_workdir}/${workflow_name}-${version}.tar.gz ${s3_dest}/
 aws s3 cp ${path_workdir}/install.sh ${s3_dest}/install-${workflow_name}-${version}.sh

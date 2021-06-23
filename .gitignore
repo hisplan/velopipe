@@ -1,2 +1,4 @@
 .DS_Store
-transfer/*
+.ipynb_checkpoints
+config/archive/
+tmp/*

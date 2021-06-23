@@ -13,7 +13,7 @@ task TagBam2 {
     # .bai should be localized so that tag_bam.py can pick it up
     # otherwise, pysam.fetch will error out (called on bamfile without index)
 
-    String dockerImage = "hisplan/seqc-utils:0.4.9-beta.5"
+    String dockerImage = "hisplan/seqc-utils:0.4.9"
     Float inputSize = size(inBam, "GiB") + size(inBai, "GiB") + size(whitelist, "GiB") + size(cbCorrection, "GiB") + size(umiCorrection, "GiB")
 
     command <<<
@@ -55,8 +55,8 @@ task TagBam2 {
     runtime {
         docker: dockerImage
         # disks: "local-disk " + ceil(10 * (if inputSize < 1 then 5 else inputSize)) + " HDD"
-        cpu: 32
-        memory: "128 GB"
+        cpu: 15
+        memory: "100 GB"
         preemptible: 0
     }
 }

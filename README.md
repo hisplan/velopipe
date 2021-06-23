@@ -2,6 +2,12 @@
 
 Pipeline for RNA Velocity using Velocyto & scVelo
 
+## Setup
+
+```bash
+aws s3 cp s3://dp-lab-home/software/install-Velopipe-0.0.4.sh - | bash
+```
+
 ## Preparing Job File
 
 You need to provide two JSON files that describes your job:

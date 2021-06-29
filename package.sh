@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-version="0.0.4"
+version="0.0.5"
 workflow_name="Velopipe"
 
 #

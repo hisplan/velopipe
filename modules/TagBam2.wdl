@@ -50,6 +50,7 @@ task TagBam2 {
     output {
         Array[File] outTaggedBam = glob("data/*.tagged.bam")
         File outLog = "tag_bam.log"
+        File outStats = "stats.csv"
     }
 
     runtime {

@@ -1,7 +1,0 @@
-{
-    "Velopipe.bam": "gs://chunj-cromwell/velopipe/sampled.bam",
-    "Velopipe.bai": "gs://chunj-cromwell/velopipe/sampled.bam.bai",
-    "Velopipe.gtf": "gs://chunj-cromwell/velopipe/annotations.gtf",
-    "Velopipe.barcodeWhitelist": "gs://chunj-cromwell/velopipe/737K-august-2016.txt",
-    "Velopipe.alreadySortedBam": true
-}

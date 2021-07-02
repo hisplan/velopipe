@@ -5,7 +5,7 @@ Pipeline for RNA Velocity using Velocyto & scVelo
 ## Setup
 
 ```bash
-aws s3 cp s3://dp-lab-home/software/install-Velopipe-0.0.5.sh - | bash
+aws s3 cp s3://dp-lab-home/software/install-Velopipe-0.0.6.sh - | bash
 ```
 
 ## Preparing Job File

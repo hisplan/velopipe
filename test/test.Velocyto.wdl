@@ -10,6 +10,9 @@ workflow Velocyto {
         File baiPosSorted
         File gtf
         File filteredBarcodeSet
+
+        # docker-related
+        String dockerRegistry
     }
 
     call Velocyto.Velocyto {
@@ -18,7 +21,8 @@ workflow Velocyto {
             bamPosSorted = bamPosSorted,
             baiPosSorted = baiPosSorted,
             gtf = gtf,
-            filteredBarcodeSet = filteredBarcodeSet
+            filteredBarcodeSet = filteredBarcodeSet,
+            dockerRegistry = dockerRegistry
     }
 
 }

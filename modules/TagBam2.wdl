@@ -8,12 +8,15 @@ task TagBam2 {
         File whitelist
         File cbCorrection
         File umiCorrection
+
+        # docker-related
+        String dockerRegistry
     }
 
     # .bai should be localized so that tag_bam.py can pick it up
     # otherwise, pysam.fetch will error out (called on bamfile without index)
 
-    String dockerImage = "hisplan/seqc-utils:0.4.10"
+    String dockerImage = dockerRegistry + "/seqc-utils:0.4.10"
     Float inputSize = size(inBam, "GiB") + size(inBai, "GiB") + size(whitelist, "GiB") + size(cbCorrection, "GiB") + size(umiCorrection, "GiB")
 
     command <<<

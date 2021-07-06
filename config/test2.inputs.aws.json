@@ -6,5 +6,6 @@
     "Velopipe2.gtf": "s3://seqc-public/genomes/hg38_long_polya/annotations.gtf",
     "Velopipe2.barcodeWhitelist": "s3://seqc-public/barcodes/ten_x_v3/flat/3M-february-2018.txt",
     "Velopipe2.cbCorrection": "s3://dp-lab-test/seqc/datasets/adjuvant-vaccine/AWS/ISO/seqc-results/1379_ISO_IGO_10084_3_cb-correction.csv.gz",
-    "Velopipe2.umiCorrection": "s3://dp-lab-test/seqc/datasets/adjuvant-vaccine/AWS/ISO/seqc-results/1379_ISO_IGO_10084_3_umi-correction.csv.gz"
+    "Velopipe2.umiCorrection": "s3://dp-lab-test/seqc/datasets/adjuvant-vaccine/AWS/ISO/seqc-results/1379_ISO_IGO_10084_3_umi-correction.csv.gz",
+    "Velopipe2.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
 }

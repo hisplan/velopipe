@@ -6,10 +6,14 @@ workflow SortByBarcode {
 
     input {
         File taggedBam
+
+        # docker-related
+        String dockerRegistry
     }
 
     call SortByBarcode.SortByBarcode {
         input:
-            inBam = taggedBam
+            inBam = taggedBam,
+            dockerRegistry = dockerRegistry
     }
 }

@@ -14,6 +14,9 @@ workflow TagBam2 {
         File whitelist
         File cbCorrection
         File umiCorrection
+
+        # docker-related
+        String dockerRegistry
     }
 
     call SplitBam.SplitBam {
@@ -25,7 +28,8 @@ workflow TagBam2 {
     scatter (bam in SplitBam.outBam) {
         call SortIndexBam.SortIndexBam {
             input:
-                inBam = bam
+                inBam = bam,
+                dockerRegistry = dockerRegistry
         }
     }
 
@@ -35,7 +39,8 @@ workflow TagBam2 {
             inBai = SortIndexBam.outSortedBai,
             whitelist = whitelist,
             cbCorrection = cbCorrection,
-            umiCorrection = umiCorrection
+            umiCorrection = umiCorrection,
+            dockerRegistry = dockerRegistry
     }
 
     call MergeBam.MergeBam {

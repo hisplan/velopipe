@@ -8,9 +8,12 @@ task Velocyto {
         File baiPosSorted
         File gtf
         File filteredBarcodeSet
+
+        # docker-related
+        String dockerRegistry
     }
 
-    String dockerImage = "hisplan/cromwell-velocyto:0.17.17"
+    String dockerImage = dockerRegistry + "/cromwell-velocyto:0.17.17"
     Float inputSize = size(bamCBSorted, "GiB") + size(bamPosSorted, "GiB") + size(baiPosSorted, "GiB") + size(gtf, "GiB") + size(filteredBarcodeSet, "GiB")
 
     # the current version of velocyto is pretty much single-threaded

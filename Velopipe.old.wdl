@@ -15,18 +15,23 @@ workflow Velopipe {
         File gtf
         File barcodeWhitelist
         Boolean alreadySortedBam
+
+        # docker-related
+        String dockerRegistry
     }
 
     call ExtractBarcodes.ExtractBarcodes {
         input:
-            countsMatrix = countsMatrix
+            countsMatrix = countsMatrix,
+            dockerRegistry = dockerRegistry
     }
 
     # sort and index if not already
     if (!alreadySortedBam) {
         call SortIndexBam.SortIndexBam as SortIndexUntaggedBam {
             input:
-                inBam = bam
+                inBam = bam,
+                dockerRegistry = dockerRegistry
         }
     }
 
@@ -39,19 +44,22 @@ workflow Velopipe {
             whitelist = barcodeWhitelist,
             inBam = sortedBam,
             inBai = sortedBai,
-            outBam = basename(sortedBam, ".bam") + ".tagged.bam"
+            outBam = basename(sortedBam, ".bam") + ".tagged.bam",
+            dockerRegistry = dockerRegistry
     }
 
     # if the file cellsorted_${ORIGINAL-BAM-NAME} exists,
     # the sorting procedure will be skipped and the file present will be used.
     call SortByBarcode.SortByBarcode as CBSortedTaggedBam {
         input:
-            inBam = TagBam.outTaggedBam
+            inBam = TagBam.outTaggedBam,
+            dockerRegistry = dockerRegistry
     }
 
     call SortIndexBam.SortIndexBam as PosSortedTaggedBam {
         input:
-            inBam = TagBam.outTaggedBam
+            inBam = TagBam.outTaggedBam,
+            dockerRegistry = dockerRegistry
     }
 
     call Velocyto.Velocyto {
@@ -60,7 +68,8 @@ workflow Velopipe {
             bamPosSorted = PosSortedTaggedBam.outSortedBam,
             baiPosSorted = PosSortedTaggedBam.outSortedBai,
             gtf = gtf,
-            filteredBarcodeSet = ExtractBarcodes.outFilteredBarcodesACGT
+            filteredBarcodeSet = ExtractBarcodes.outFilteredBarcodesACGT,
+            dockerRegistry = dockerRegistry
     }
 
     output {

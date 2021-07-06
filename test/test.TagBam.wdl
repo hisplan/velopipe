@@ -8,6 +8,9 @@ workflow TagBam {
         File whitelist
         File bam
         File bai
+
+        # docker-related
+        String dockerRegistry
     }
 
     call TagBam.TagBam {
@@ -15,6 +18,7 @@ workflow TagBam {
             whitelist = whitelist,
             inBam = bam,
             inBai = bai,
-            outBam = basename(bam, ".bam") + ".tagged.bam"
+            outBam = basename(bam, ".bam") + ".tagged.bam",
+            dockerRegistry = dockerRegistry
     }
 }

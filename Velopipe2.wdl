@@ -19,11 +19,15 @@ workflow Velopipe2 {
         File countsMatrix
         File gtf
         File barcodeWhitelist
+
+        # docker-related
+        String dockerRegistry = "583643567512.dkr.ecr.us-east-1.amazonaws.com"
     }
 
     call ExtractBarcodes.ExtractBarcodes {
         input:
-            countsMatrix = countsMatrix
+            countsMatrix = countsMatrix,
+            dockerRegistry = dockerRegistry
     }
 
     call SplitBam.SplitBam {
@@ -35,7 +39,8 @@ workflow Velopipe2 {
     scatter (bam in SplitBam.outBam) {
         call SortIndexBam.SortIndexBam {
             input:
-                inBam = bam
+                inBam = bam,
+                dockerRegistry = dockerRegistry
         }
     }
 
@@ -45,7 +50,8 @@ workflow Velopipe2 {
             inBai = SortIndexBam.outSortedBai,
             whitelist = barcodeWhitelist,
             cbCorrection = cbCorrection,
-            umiCorrection = umiCorrection
+            umiCorrection = umiCorrection,
+            dockerRegistry = dockerRegistry
     }
 
     call MergeBam.MergeBam {
@@ -58,7 +64,8 @@ workflow Velopipe2 {
     # the sorting procedure will be skipped and the file present will be used.
     call SortByBarcode.SortByBarcode as CBSortedTaggedBam {
         input:
-            inBam = MergeBam.outBam
+            inBam = MergeBam.outBam,
+            dockerRegistry = dockerRegistry
     }
 
     call Velocyto.Velocyto {
@@ -67,7 +74,8 @@ workflow Velopipe2 {
             bamPosSorted = MergeBam.outBam,
             baiPosSorted = MergeBam.outBai,
             gtf = gtf,
-            filteredBarcodeSet = ExtractBarcodes.outFilteredBarcodesACGT
+            filteredBarcodeSet = ExtractBarcodes.outFilteredBarcodesACGT,
+            dockerRegistry = dockerRegistry
     }
 
     output {

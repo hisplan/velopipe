@@ -1,3 +1,4 @@
 {
-    "SortByBarcode.taggedBam": "s3://dp-lab-batch/cromwell-execution/Velopipe/7f6cd27d-b81f-401d-ab55-0b65790244bc/call-TagBam/1380_IL10R_P176_IGO_10084_4_Aligned.out.sorted.tagged.bam"
+    "SortByBarcode.taggedBam": "s3://dp-lab-batch/cromwell-execution/Velopipe/7f6cd27d-b81f-401d-ab55-0b65790244bc/call-TagBam/1380_IL10R_P176_IGO_10084_4_Aligned.out.sorted.tagged.bam",
+    "SortByBarcode.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
 }

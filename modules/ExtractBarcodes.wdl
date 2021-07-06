@@ -4,9 +4,12 @@ task ExtractBarcodes {
 
     input {
         File countsMatrix
-    }
 
-    String dockerImage = "hisplan/seqc-utils:0.4.10"
+        # docker-related
+        String dockerRegistry
+    }
+    
+    String dockerImage = dockerRegistry + "/seqc-utils:0.4.10"
     Float inputSize = size(countsMatrix, "GiB")
 
     command <<<

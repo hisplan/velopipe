@@ -4,9 +4,12 @@ task SortByBarcode {
 
     input {
         File inBam
+
+        # docker-related
+        String dockerRegistry
     }
 
-    String dockerImage = "hisplan/cromwell-samtools:1.9"
+    String dockerImage = dockerRegistry + "/cromwell-samtools:1.9"
     Float inputSize = size(inBam, "GiB")
     Int numCores = 8
 

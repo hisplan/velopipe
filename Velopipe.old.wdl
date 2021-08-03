@@ -9,11 +9,11 @@ import "modules/Velocyto.wdl" as Velocyto
 workflow Velopipe {
 
     input {
-        File countsMatrix
+        File filteredBarcodes
         File bam
         File? bai
         File gtf
-        File barcodeWhitelist
+        File fullBarcodeWhitelist
         Boolean alreadySortedBam
 
         # docker-related
@@ -22,7 +22,7 @@ workflow Velopipe {
 
     call ExtractBarcodes.ExtractBarcodes {
         input:
-            countsMatrix = countsMatrix,
+            filteredBarcodes = filteredBarcodes,
             dockerRegistry = dockerRegistry
     }
 
@@ -41,7 +41,7 @@ workflow Velopipe {
 
     call TagBam.TagBam {
         input:
-            whitelist = barcodeWhitelist,
+            whitelist = fullBarcodeWhitelist,
             inBam = sortedBam,
             inBai = sortedBai,
             outBam = basename(sortedBam, ".bam") + ".tagged.bam",

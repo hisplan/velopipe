@@ -5,7 +5,7 @@ import "modules/ExtractBarcodes.wdl" as ExtractBarcodes
 workflow ExtractBarcodes {
 
     input {
-        File countsMatrix
+        File filteredBarcodes
 
         # docker-related
         String dockerRegistry        
@@ -13,7 +13,7 @@ workflow ExtractBarcodes {
 
     call ExtractBarcodes.ExtractBarcodes {
         input:
-            countsMatrix = countsMatrix,
+            filteredBarcodes = filteredBarcodes,
             dockerRegistry = dockerRegistry
     }
 }

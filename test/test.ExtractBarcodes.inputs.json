@@ -1,4 +1,4 @@
 {
-    "ExtractBarcodes.countsMatrix": "s3://dp-lab-data/collaborators/wolchok/Adjuvant_vaccine/IL10R/seqc-results/1380_IL10R_P176_IGO_10084_4_dense.csv",
+    "ExtractBarcodes.filteredBarcodes": "s3://dp-lab-data/collaborators/wolchok/Adjuvant_vaccine/IL10R/seqc-results/1380_IL10R_P176_IGO_10084_4_dense.csv",
     "ExtractBarcodes.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
 }

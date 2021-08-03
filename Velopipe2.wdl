@@ -16,9 +16,9 @@ workflow Velopipe2 {
         Int numOfChunks = 20
         File cbCorrection
         File umiCorrection
-        File countsMatrix
+        File filteredBarcodes
         File gtf
-        File barcodeWhitelist
+        File fullBarcodeWhitelist
 
         # docker-related
         String dockerRegistry = "583643567512.dkr.ecr.us-east-1.amazonaws.com"
@@ -26,7 +26,7 @@ workflow Velopipe2 {
 
     call ExtractBarcodes.ExtractBarcodes {
         input:
-            countsMatrix = countsMatrix,
+            filteredBarcodes = filteredBarcodes,
             dockerRegistry = dockerRegistry
     }
 
@@ -48,7 +48,7 @@ workflow Velopipe2 {
         input:
             inBam = SortIndexBam.outSortedBam,
             inBai = SortIndexBam.outSortedBai,
-            whitelist = barcodeWhitelist,
+            whitelist = fullBarcodeWhitelist,
             cbCorrection = cbCorrection,
             umiCorrection = umiCorrection,
             dockerRegistry = dockerRegistry

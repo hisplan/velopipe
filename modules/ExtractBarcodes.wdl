@@ -9,7 +9,7 @@ task ExtractBarcodes {
         String dockerRegistry
     }
 
-    String dockerImage = dockerRegistry + "/seqc-utils:0.5.1"
+    String dockerImage = dockerRegistry + "/seqc-utils:0.5.2"
     Float inputSize = size(filteredBarcodes, "GiB")
 
     command <<<

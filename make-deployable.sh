@@ -2,7 +2,7 @@
 
 wf_name="velopipe"
 version="0.0.7"
-files="submit.sh Velopipe2.wdl Velopipe.deps.zip Velopipe.options.aws.json"
+files="submit.sh Velopipe2.wdl Velopipe.deps.zip Velopipe.options.aws.json config/template.*.json"
 dest="$HOME/scing/bin"
 
 usage()
@@ -36,7 +36,7 @@ mkdir -p ${dest}
 # create a temporary directory and copy files
 path_workdir=`mktemp -d`
 mkdir -p ${path_workdir}/${wf_name}-${version}
-cp ${files} ${path_workdir}/${wf_name}-${version}/
+rsync -Rv ${files} ${path_workdir}/${wf_name}-${version}/
 
 # tar-gzip
 cd ${path_workdir}

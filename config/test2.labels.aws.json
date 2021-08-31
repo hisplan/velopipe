@@ -1,9 +1,0 @@
-{
-    "pipelineType": "Velopipe2",
-    "project": "Project 176",
-    "sample": "ISO",
-    "owner": "chunj",
-    "destination": "s3://dp-lab-gwf-core/outputs/Velopipe2/adjuvant_vaccine/ISO/",
-    "transfer": "skip",
-    "comment": "RNA Velocity"
-}

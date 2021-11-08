@@ -8,7 +8,7 @@ The pipeline is a part of SCING (Single-Cell pIpeliNe Garden; pronounced as "sin
 
 ## Create Job Files
 
-You need two files for processing a V(D)J sample - one inputs file and one labels file. Use the following example files to help you create your configuration file:
+You need two files to compute RNA velocity - one inputs file and one labels file. Use the following example files to help you create your configuration file:
 
 - `config/template.inputs.json`
 - `config/template.labels.json`
@@ -26,3 +26,4 @@ conda activate scing
     -l config/your-sample.labels.json \
     -o Velopipe.options.aws.json
 ```
+\

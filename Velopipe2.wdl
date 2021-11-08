@@ -21,7 +21,7 @@ workflow Velopipe2 {
         File fullBarcodeWhitelist
 
         # docker-related
-        String dockerRegistry = "583643567512.dkr.ecr.us-east-1.amazonaws.com"
+        String dockerRegistry
     }
 
     call ExtractBarcodes.ExtractBarcodes {

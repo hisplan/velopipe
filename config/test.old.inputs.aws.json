@@ -4,5 +4,5 @@
     "Velopipe.gtf": "s3://seqc-public/genomes/hg38_long_polya/annotations.gtf",
     "Velopipe.fullBarcodeWhitelist": "s3://seqc-public/barcodes/ten_x_v2/flat/737K-august-2016.txt",
     "Velopipe.alreadySortedBam": false,
-    "Velopipe.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
+    "Velopipe.dockerRegistry": "quay.io/hisplan"
 }

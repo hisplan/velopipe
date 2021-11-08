@@ -1,4 +1,4 @@
 {
     "SortIndexBam.taggedBam": "s3://dp-lab-batch/cromwell-execution/Velopipe/7571deef-92b8-45c1-9334-2e77143b3c2f/call-TagBam/Organoid_MP69WT_Aligned.out.sorted.tagged.bam",
-    "SortIndexBam.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
+    "SortIndexBam.dockerRegistry": "quay.io/hisplan"
 }

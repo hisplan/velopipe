@@ -7,5 +7,5 @@
     "Velopipe2.fullBarcodeWhitelist": "s3://seqc-public/barcodes/ten_x_v3/flat/3M-february-2018.txt",
     "Velopipe2.cbCorrection": "s3://.../seqc-results/test_sample1_cb-correction.csv.gz",
     "Velopipe2.umiCorrection": "s3://.../seqc-results/test_sample1_umi-correction.csv.gz",
-    "Velopipe2.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
+    "Velopipe2.dockerRegistry": "quay.io/hisplan"
 }

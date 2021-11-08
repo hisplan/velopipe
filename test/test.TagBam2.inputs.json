@@ -5,5 +5,5 @@
     "TagBam2.whitelist": "s3://seqc-public/barcodes/ten_x_v2/flat/737K-august-2016.txt",
     "TagBam2.cbCorrection": "s3://dp-lab-test/seqc/datasets/RU682_NORMAL/RU682_NORMAL_DASK_cb-correction.csv.gz",
     "TagBam2.umiCorrection": "s3://dp-lab-test/seqc/datasets/RU682_NORMAL/RU682_NORMAL_DASK_umi-correction.csv.gz",
-    "TagBam2.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
+    "TagBam2.dockerRegistry": "quay.io/hisplan"
 }

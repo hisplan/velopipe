@@ -4,5 +4,5 @@
     "Velocyto.baiPosSorted": "s3://dp-lab-batch/cromwell-execution/Velopipe/c34a4f5d-3c3a-45f0-a503-9ad5adb17cd4/call-PosSortedTaggedBam/1380_IL10R_P176_IGO_10084_4_Aligned.out.sorted.tagged.sorted.bam.bai",
     "Velocyto.gtf": "s3://seqc-public/genomes/hg38_long_polya/annotations.gtf",
     "Velocyto.filteredBarcodeSet": "s3://dp-lab-batch/cromwell-execution/ExtractBarcodes/0fb780a6-1503-4fa5-b027-29564dea80da/call-ExtractBarcodes/results/barcodes.acgt.txt",
-    "Velocyto.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
+    "Velocyto.dockerRegistry": "quay.io/hisplan"
 }

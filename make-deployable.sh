@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 wf_name="velopipe"
-version="0.0.7"
+version="0.0.8"
 files="submit.sh Velopipe2.wdl Velopipe.deps.zip Velopipe.options.aws.json config/template.*.json"
 dest="$HOME/scing/bin"
 

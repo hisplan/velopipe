@@ -1,6 +1,6 @@
 # velopipe
 
-RNA Velocity for SEQC
+Velopipe is a RNA Vecocity pipeline for SEQC.
 
 ## Setup
 

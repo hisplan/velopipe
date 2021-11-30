@@ -1,3 +1,19 @@
+# Velopipe
+
+Velopipe is a RNA Vecocity pipeline for SEQC.
+
+## Understanding the Overall Workflow
+
+1. The BAM file from SEQC needs to be reformatted (to comply with the GA4GH standard) so that each read in the BAM file has Chromium cellular and molecular barcode information attached. Due to the way SEQC handles reads, the previous versions of SEQC (<0.2.9) is not able to do this properly, thus the very first step is reprocessing the sample using the latest version of SEQC (0.2.9+). The new versions of SEQC will generate a file having pre-/post-correction CB/UMI information.
+1. The pre-/post-correction CB/UMI information will be attached to the BAM file (aka. tagging BAM or attaching barcodes to BAM).
+1. Velocyto will be run with the barcode attached BAM file as input. This will generate a loom file with spliced/unspliced reads flagged.
+
+## Notes
+
+The new SEQC has some bug fixes. One of the biggest change was, the data type used to handle UMI was incorrect in the previous versions of SEQC. Sometime you would see negative numbers for DNA3Bit encoded UMI. Of course, in this case you won’t be able to decode it back to the ACGT form of UMI sequence - DNA3Bit would throw an error. Due to this issue, UMI collapsing was sometimes incorrectly done, causing some count changes in sparse/dense matrix as well as in ReadArray.
+
+Since we're rerunning the latest SEQC here, you might observe some increase/decrease in the number of cells/molecules/and etc., sometimes a negligible change, sometimes up to hundreds +/- changes, all depends on the samples being processed.
+
 ## Preparing Job File
 
 You need to provide two JSON files that describes your job:
@@ -47,11 +63,11 @@ The entry exon_number was not present in the gtf file.
 {
     "pipelineType": "Velopipe2",
     "project": "Project 193",
-    "sample": "1469_TGFb_LCC-TRL_1_P193",
+    "sample": "RU263",
     "owner": "chunj",
-    "destination": "s3://dp-lab-data/Siting/TGFb_LCC_TRL1",
+    "destination": "s3://dp-lab-test/seqc/joe/Ru263/velopipe",
     "transfer": "-",
-    "comment": "RNA Velocity"
+    "comment": ""
 }
 ```
 
